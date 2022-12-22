@@ -3,39 +3,34 @@
 #include "Bank.h"
 using namespace std;
 
-void BankAccount::createAccount()
+void Bank::bubbleSort(int n) 
+{ 
+   int i, j; 
+   for (i = 0; i < n-1; i++)         
+       for (j = 0; j < n-i-1; j++)  
+           if (account[j].balance > account[j+1].balance) {
+              float temp = account[j].balance;
+              account[j].balance = account[j+1].balance;
+              account[j+1].balance = temp; 
+           }
+} 
+
+void Bank::accountCreation()
 {
-    cout << "Enter Customer ID:" << endl;
-    cin >> customerId;
-    cout << "Enter owner name:" << endl;
-    cin >> ownerName;
-    cout << "Enter balance:" << endl;
-    cin >> balance;
-    
-    
+    account[0].createAccount();
+    account[1].createAccount();
+    account[0].topUpBalance();
+    account[1].withdrawCash();
+    account[0].showAccount();
+    cout << endl;
+    account[1].showAccount();
 }
 
-void BankAccount::topUpBalance()
+void Bank::sortAccounts(int n)
 {
-    float a;
-    cout << "Enter top up amount:" << endl;
-    cin >> a;
-    balance = balance + a;
-    cout << "Your balance: " << balance << endl;
+    int i; 
+    bubbleSort(n);
+    for (i=0; i < n; i++) 
+        cout << account[i].balance << "\n";
 }
 
-void BankAccount::withdrawCash()
-{
-    float b;
-    cout << "Enter withdraw amount:" << endl;
-    cin >> b;
-    balance = balance - b;
-    cout << "Your balance: " << balance << endl;
-}
-
-void BankAccount::showAccount()
-{
-    cout << "Customer ID: " << customerId << endl;
-    cout << "Owner name: " << ownerName << endl;
-    cout << "Balance: " << balance << endl;
-}
