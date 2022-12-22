@@ -2,8 +2,9 @@
 #include "Bank.cpp"
 
 int main() {
+    int number_of_accounts;
     Bank list;
     list.accountCreation();
-    list.sortAccounts(2);
+    list.sortAccounts(number_of_accounts);
 
 }
