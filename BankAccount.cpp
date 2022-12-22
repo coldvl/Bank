@@ -16,10 +16,10 @@ void BankAccount::createAccount()
 
 void BankAccount::topUpBalance()
 {
-    float a;
+    float topUpAmount;
     cout << "Enter top up amount:" << endl;
-    cin >> a;
-    balance = balance + a;
+    cin >> topUpAmount;
+    balance = balance + topUpAmount;
     cout << "Your balance: " << balance << endl;
 }
 
