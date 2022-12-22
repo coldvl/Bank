@@ -7,8 +7,8 @@ using namespace std;
 class BankAccount
 {
 private:
-    int customerId;
-    string ownerName;
+    int customer_id;
+    string owner_name;
     float balance;
     
 public:

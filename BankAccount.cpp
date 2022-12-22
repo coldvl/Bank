@@ -5,9 +5,9 @@ using namespace std;
 void BankAccount::createAccount()
 {
     cout << "Enter Customer ID:" << endl;
-    cin >> customerId;
+    cin >> customer_id;
     cout << "Enter owner name:" << endl;
-    cin >> ownerName;
+    cin >> owner_name;
     cout << "Enter balance:" << endl;
     cin >> balance;
     
@@ -16,25 +16,25 @@ void BankAccount::createAccount()
 
 void BankAccount::topUpBalance()
 {
-    float topUpAmount;
+    float top_up_amount;
     cout << "Enter top up amount:" << endl;
-    cin >> topUpAmount;
-    balance = balance + topUpAmount;
+    cin >> top_up_amount;
+    balance = balance + top_up_amount;
     cout << "Your balance: " << balance << endl;
 }
 
 void BankAccount::withdrawCash()
 {
-    float b;
+    float withdraw_amount;
     cout << "Enter withdraw amount:" << endl;
-    cin >> b;
-    balance = balance - b;
+    cin >> withdraw_amount;
+    balance = balance - withdraw_amount;
     cout << "Your balance: " << balance << endl;
 }
 
 void BankAccount::showAccount()
 {
-    cout << "Customer ID: " << customerId << endl;
-    cout << "Owner name: " << ownerName << endl;
+    cout << "Customer ID: " << customer_id << endl;
+    cout << "Owner name: " << owner_name << endl;
     cout << "Balance: " << balance << endl;
 }
